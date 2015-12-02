@@ -4,8 +4,7 @@
            [javafx.fxml FXMLLoader]
            [javafx.stage Stage]
            [javafx.scene Scene]
-           (javafx.scene.paint Color)
-           (javafx.animation AnimationTimer))
+           [javafx.animation AnimationTimer])
   (:gen-class :extends javafx.application.Application))
 
 (def width 800)
@@ -18,7 +17,8 @@
         fps-label (.lookup scene "#fps")
         context (.getGraphicsContext2D canvas)
         timer (proxy [AnimationTimer] []
-                (handle [now]))]
+                (handle [now]
+                  ))]
     (doto stage
       (.setTitle "Ants")
       (.setScene scene)
